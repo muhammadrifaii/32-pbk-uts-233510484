@@ -32,7 +32,7 @@ function filterBtnClass(type) {
 <template>
   <div class="todo-app">
     <div class="container">
-      <h1>Kegiatann gua</h1>
+      <h1>Agenda hari ini</h1>
       <div class="input-group">
         <input v-model="newTask" @keyup.enter="addTask" placeholder="Tambah kegiatan baru" />
         <button @click="addTask">Tambah</button>
@@ -47,7 +47,7 @@ function filterBtnClass(type) {
             <input type="checkbox" v-model="task.completed" />
             <span :class="{ done: task.completed }">{{ task.text }}</span>
           </div>
-          <button class="delete" @click="removeTask(index)"></button>
+          <button class="delete" @click="removeTask(index)">❌</button>
         </li>
       </ul>
       <p v-if="filteredTasks.length === 0" class="empty-msg">
@@ -59,6 +59,7 @@ function filterBtnClass(type) {
 
 
 <style scoped>
+
 .todo-app {
   min-height: 100vh;
   background: #f3f4f6;
@@ -73,9 +74,12 @@ function filterBtnClass(type) {
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 1.5rem;
 }
 .input-group {
